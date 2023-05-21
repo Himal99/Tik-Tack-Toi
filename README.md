@@ -7,7 +7,7 @@ The challenge OOP developers have is the need to understand and code in the stru
 
 ORMs are popular and controversial at the same time. Advocates of ORMs claim they increase productivity, improve application design, reuse code and maintain the application over time. According to detractors, a negative aspect of ORMs is performance. This article will provide an overview of ORMs, compare them against SQL tools, and review the pros and cons of these tools so that you can decide if ORMs will help or hurt your database application development efforts.
 
-What is an ORM?
+<h5>What is an ORM?</h5>
 An object-relational mapper provides an object-oriented layer between relational databases and object-oriented programming languages without having to write SQL queries. It standardizes interfaces reducing boilerplate and speeding development time.
 
 Object-oriented programming includes many states and codes in a format that is complex to understand and interpret. ORMs translate this data and create a structured map to help developers understand the underlying database structure. The mapping explains how objects are related to different tables. ORMs use this information to convert data between tables and generate the SQL code for a relational database to insert, update, create and delete data in response to changes the application makes to the data object. Once written, the ORM mapping will manage the application’s data needs and you will not need to write any more low-level code.
