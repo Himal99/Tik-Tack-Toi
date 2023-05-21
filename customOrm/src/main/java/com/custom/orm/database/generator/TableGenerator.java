@@ -2,13 +2,15 @@ package com.custom.orm.database.generator;
 
 import com.custom.orm.core.exception.SbDbServiceValidationException;
 import lombok.Data;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Himal Rai on 5/19/2023
@@ -17,46 +19,64 @@ import java.util.*;
  */
 @Data
 @Component
+@PropertySource("classpath:application.properties")
 public class TableGenerator {
+
     private String idType;
     private String tableName;
-    private String pk= "id int primary key";
-    private Map<String, Objects> column = new HashMap<>();
+    private String pk = "id int primary key";
+    private Map<String, String> column = new HashMap<>();
+    private Boolean mappedFinalColumns = Boolean.FALSE;
+    private Boolean enableVersion = Boolean.FALSE;
 
-    public String sql(){
+
+    public String sql() {
         StringBuilder table = new StringBuilder("create table");
         table.append(" ").append(tableName);
         table.append("(");
         table.append(pk);
         table.append(",");
         table.append("");
-        for (Map.Entry<String,Objects> m: column.entrySet()){
-            String columnNAme = m.getKey()+" "+m.getValue();
+
+        if (mappedFinalColumns) column.putAll(finalTableColumns());
+
+        for (Map.Entry<String, String> m : column.entrySet()) {
+            String columnNAme = m.getKey() + " " + m.getValue();
             table.append(columnNAme).append(",");
         }
         table.append(")");
-        return table.toString().replace(",)",")");
+        System.out.println("Generate Sql Query: " + table.toString().replace(",)", ")"));
+        return table.toString().replace(",)", ")");
     }
 
-    public String generateQueryFromFile(String file)throws Exception{
+    private Map<String, String> finalTableColumns() {
+        if (enableVersion) column.put("version", "int");
+        return new HashMap() {{
+            put("created_At", "date default current_timestamp");
+            put("modified_At", "date default current_timestamp");
+        }};
+    }
+
+
+    public String generateQueryFromFile(String file) throws Exception {
         File queryFile = new File(file);
-        if (!queryFile.exists())throw new SbDbServiceValidationException("No file found");
+        if (!queryFile.exists()) throw new SbDbServiceValidationException("No file found");
 
         BufferedReader reader =
                 new BufferedReader(new FileReader(queryFile));
         String query;
         StringBuilder builder = new StringBuilder("create table");
         builder.append(" ").append(tableName);
-        String filterQuery[]=null;
-        while ((query=reader.readLine()) != null){
-            query +=query;
+        String filterQuery[] = null;
+        while ((query = reader.readLine()) != null) {
+            query += query;
         }
         filterQuery = query.split(",");
 
         return filterQuery.toString();
     }
 
-    public String showQuery(){
+    public String showQuery() {
         if (StringUtils.hasText(sql()))
             return sql();
         return "Query is empty";

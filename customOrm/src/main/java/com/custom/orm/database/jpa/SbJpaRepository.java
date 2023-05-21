@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
 
 @Component
 @Repository
-public abstract class SbJpaRepository<T> extends SbOrmTemplate<T>{
+public abstract class SbJpaRepository<T> extends SbOrmTemplate<T> {
 /** this is our custom JPA Repository **/
 }

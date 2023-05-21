@@ -1,7 +1,5 @@
 package com.custom.orm.database.mapper;
 
-import com.custom.orm.database.template.SbOrmTemplate;
-
 import java.sql.ResultSet;
 
 /**
@@ -10,7 +8,7 @@ import java.sql.ResultSet;
  * Project customOrm.
  */
 @FunctionalInterface
-public  interface SbRowMapper<T>{
+public interface SbRowMapper<T> {
 
     T mapRow(ResultSet resultSet) throws Exception;
 }

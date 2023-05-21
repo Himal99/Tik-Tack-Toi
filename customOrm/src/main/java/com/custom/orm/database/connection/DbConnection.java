@@ -13,7 +13,7 @@ public class DbConnection {
     public static Connection getConnection()throws Exception
     {
         String userName="sa",pw="root",
-                url="jdbc:sqlserver://localhost:1433;DatabaseName=orm;" +
+                url="jdbc:sqlserver://localhost:1433;DatabaseName=testDb;" +
                         "encrypt=true;trustServerCertificate=true;";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection connection = DriverManager.getConnection(url,userName,pw);
