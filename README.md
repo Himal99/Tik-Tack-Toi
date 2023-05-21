@@ -1,17 +1,25 @@
-# custom-orm 
-<strong>Contact for contribution: &nbsp;<a>bantwaheem35@gmail.com</a></strong><br>
-<strong>How to use:</strong> &nbsp; <a>springCustomOrm.com</a>
+# Tick-Tack-Toi 
+<strong>Subscribe for contribution: &nbsp;<a>bantwaheem35@gmail.com</a></strong><br>
+<strong>Instruction:</strong> &nbsp; Releasing soon...
 <hr>
-One of the challenges of using object-oriented programming (OOP) languages and databases is the complexity of aligning the programming code with database structures. Object-relational mapping (ORM) is a technique that creates a layer between the language and the database, helping programmers work with data without the OOP paradigm.
 
-The challenge OOP developers have is the need to understand and code in the structured query language (SQL) in order to connect their application to an SQL database. Developers who know SQL can write data-access code. This raw SQL coding can be extremely time-consuming because it requires the developer to extract the code strings’ data elements. SQL query builders add a layer of abstraction to the SQL code to provide more information about the data. However, developers still need to understand and write SQL.
+<h5>What is an Tick-Tack-Toi?</h5>
+Tick-Tack-Toi is a custom dependency for the Java language that functions as an Object-Relational Mapping (ORM) framework, similar to Hibernate. It provides a convenient and efficient way to map Java objects to relational database tables, allowing developers to interact with the database using object-oriented paradigms.
 
-ORMs are popular and controversial at the same time. Advocates of ORMs claim they increase productivity, improve application design, reuse code and maintain the application over time. According to detractors, a negative aspect of ORMs is performance. This article will provide an overview of ORMs, compare them against SQL tools, and review the pros and cons of these tools so that you can decide if ORMs will help or hurt your database application development efforts.
+Here are some key features and concepts related to Tick-Tack-Toi:
 
-<h5>What is an ORM?</h5>
-An object-relational mapper provides an object-oriented layer between relational databases and object-oriented programming languages without having to write SQL queries. It standardizes interfaces reducing boilerplate and speeding development time.
+<b>1. Mapping Entities: Tick-Tack-Toi allows developers to map Java classes to database tables. By using annotations or configuration files, developers can specify the mapping details such as table name, column names, and relationships between entities.
 
-Object-oriented programming includes many states and codes in a format that is complex to understand and interpret. ORMs translate this data and create a structured map to help developers understand the underlying database structure. The mapping explains how objects are related to different tables. ORMs use this information to convert data between tables and generate the SQL code for a relational database to insert, update, create and delete data in response to changes the application makes to the data object. Once written, the ORM mapping will manage the application’s data needs and you will not need to write any more low-level code.
+2. Persistence Context: Tick-Tack-Toi manages a persistence context, which represents the current state of the objects being persisted. It tracks changes made to the objects and synchronizes them with the database when necessary.
 
-<h5>How does ORM work? </h5>
-ORMs create a model of the object-oriented program with a high-level of abstraction. In other words, it makes a level of logic without the underlying details of the code. Mapping describes the relationship between an object and the data without knowing how the data is structured. The model can then be used to connect the application with the SQL code needed to manage data activities. This “plumbing” type of code does not have to be rewritten, saving the developer a tremendous amount of time.
+3. CRUD Operations: The framework provides methods and APIs to perform Create, Read, Update, and Delete (CRUD) operations on the mapped entities. Developers can easily save, retrieve, update, and delete objects without writing complex SQL queries manually.
+
+4. Relationships and Associations: Tick-Tack-Toi supports various types of relationships between entities, such as one-to-one, one-to-many, and many-to-many associations. These relationships can be defined using annotations or configuration files.
+
+5. Query Language: Tick-Tack-Toi includes a query language, similar to Hibernate's HQL (Hibernate Query Language) or JPA's JPQL (Java Persistence Query Language). It allows developers to write database queries using object-oriented syntax, making it easier to work with complex data retrieval scenarios.
+
+6. Integration with Java EE and Spring: Tick-Tack-Toi is designed to integrate seamlessly with Java Enterprise Edition (Java EE) and Spring frameworks. It leverages their features, such as container-managed transactions and dependency injection, to enhance application development.
+
+7. Extensibility: Tick-Tack-Toi allows developers to extend its functionality by implementing custom type mappings, converters, and interceptors. This flexibility enables customization to meet specific application requirements. </b>
+
+Overall, Tick-Tack-Toi aims to simplify database interactions in Java applications by providing a robust ORM solution. It abstracts away the complexities of SQL and database operations, allowing developers to focus on their domain models and business logic.
