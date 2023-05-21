@@ -1,5 +1,6 @@
 # custom-orm 
-<strong>Contact for contribution: &nbsp;<a>bantwaheem35@gmail.com</a></strong>
+<strong>Contact for contribution: &nbsp;<a>bantwaheem35@gmail.com</a></strong><br>
+<strong>How to use:</strong> &nbsp; <a>springCustomOrm</a>
 <hr>
 One of the challenges of using object-oriented programming (OOP) languages and databases is the complexity of aligning the programming code with database structures. Object-relational mapping (ORM) is a technique that creates a layer between the language and the database, helping programmers work with data without the OOP paradigm.
 
