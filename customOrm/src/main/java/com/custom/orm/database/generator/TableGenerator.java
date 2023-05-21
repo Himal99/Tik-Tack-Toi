@@ -20,17 +20,21 @@ import java.util.Map;
 @Data
 @Component
 @PropertySource("classpath:application.properties")
-public class TableGenerator {
+public class TableGenerator<PK> {
 
+
+    private final PK id;
     private String idType;
     private String tableName;
-    private String pk = "id int primary key";
+    private String pk;
     private Map<String, String> column = new HashMap<>();
     private Boolean mappedFinalColumns = Boolean.FALSE;
     private Boolean enableVersion = Boolean.FALSE;
 
 
     public String sql() {
+        pk = id instanceof Long ? "id Long primary key" : "id int primary key";
+
         StringBuilder table = new StringBuilder("create table");
         table.append(" ").append(tableName);
         table.append("(");

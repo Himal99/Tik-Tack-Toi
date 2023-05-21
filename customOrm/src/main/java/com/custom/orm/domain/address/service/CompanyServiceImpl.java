@@ -45,8 +45,12 @@ public class CompanyServiceImpl implements CompanyService {
                     put("cCode","varchar(200)");
                     put("cMun","varchar(200)");
                     put("cState","varchar(200)");
+                    put("cState","varchar(200)");
+                    put("cState","varchar(200)");
+                    put("cState","varchar(200)");
+                    put("cState","varchar(200)");
                 }};
-        generator.setTableName("company");
+        generator.setTableName("karmaTable3");
         generator.setColumn(columns);
         return repository.createTable(generator);
     }
