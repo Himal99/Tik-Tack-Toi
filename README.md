@@ -1,5 +1,4 @@
 # custom-orm 
-<strong>Contact</strong>
-<hr>
-<a>bantwaheem35@gmail.com</a>
+<strong>Contact for contribution: &nbsp;<a>bantwaheem35@gmail.com</a></strong>
+
 Object Relational Mapping (ORM) is a technique used in creating a "bridge" between object-oriented programs and, in most cases, relational databases.
